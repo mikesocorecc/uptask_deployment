@@ -92,5 +92,5 @@ app.listen(port, host, () => {
     console.log('El servidor esta funcionando');
 });
 
-// Llamo a mi archivo de configuracion email
-require('./handler/email');
+// // Llamo a mi archivo de configuracion email
+// require('./handler/email');

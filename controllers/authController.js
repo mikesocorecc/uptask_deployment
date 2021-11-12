@@ -1,8 +1,8 @@
 const passport = require('passport');
 const Usuarios = require('../models/Usuarios');
 const crypto = require('crypto');
-const Sequelize = require('Sequelize');
-const Op = Sequelize.Op;
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op
 const bcrypt = require('bcrypt-nodejs');
 const enviarEmail = require('../handler/email');
 
