@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        include partials/header
+    body 
+        header.barra 
+            h1  Uptask - Administrador de proyectos #{year}
+            a(href="/cerrar-sesion") Cerrar sesion 
+
+        main.contenedor 
+            aside.contenedor-proyectos 
+                .panel.crear-proyecto 
+                    a(href="/nuevo-proyecto" class="boton" style="padding: 2rem 1rem") Nuevo proyecto
+                        span +
+                .panel.lista-proyectos 
+                    h2 proyectos
+                    ul#proyectos.proyectos 
+                    if(proyectos.length)
+                        each proyecto in proyectos
+                            li 
+                                a(href=`/proyectos/${proyecto.url}`)= proyecto.nombre
+
+            block contenido
+                     
+            script(src="/dist/bundle.js")
