@@ -2,9 +2,8 @@
 const express = require('express');
 const routes = require('./routes');
 const path = require('path');
-const bodyParser = require('body-parser');
-// const expressValidator = require("express-validator");
-// const { expressValidator } = require('express-validator');
+const bodyParser  = require('body-parser');
+const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -36,22 +35,24 @@ const app = express();
 //#Cargas archivos staticos(carpeta public)
 app.use(express.static('public'));
 
-//#Habilitar body parser para leer request
-app.use(bodyParser.urlencoded({extended:true}));
-
-// Agregamos la validacion de express-validator
-// app.use(expressValidator());
-
 //#Habilitar pug
 app.set('view engine', 'pug');
+
+//#Habilitar body parser para leer request
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Agregamos express validator a toda la aplicación
+app.use(expressValidator());
+
 //#añadir carpeta de las vistas pug
 app.set('views', path.join(__dirname, './views'));
 
-// Agregar flash messages
-app.use(flash());
-
 // Agregando cookieparser
 app.use(cookieParser());
+
+// Agregar flash messages
+app.use(flash());
 
 // Agregando la lib de sesiones (permiten navegar entre distintas paginas cuando hay sesion)
 app.use(session({

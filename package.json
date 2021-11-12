@@ -4,7 +4,7 @@
   "description": "Proyecto uptask con Node y Mvc",
   "main": "index.js",
   "scripts": {
-    "desarrollo" : "concurrently \" npm run dev  \" \" npm run watch  \" ",
+    "desarrollo": "concurrently \" npm run dev  \" \" npm run watch  \" ",
     "dev": "nodemon ./index.js ",
     "start": " node ./index.js ",
     "watch": "webpack --watch  --mode development"
@@ -31,7 +31,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "express-validator": "^6.13.0",
+    "express-validator": "^5.3.1",
     "html-to-text": "^8.1.0",
     "juice": "^8.0.0",
     "mysql2": "^2.3.3-rc.0",
